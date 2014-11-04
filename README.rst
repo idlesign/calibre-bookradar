@@ -22,7 +22,7 @@ Requirements
 Installation
 ------------
 
-Use the following command to create plugin .zip and install it automatically::
+Use the following command while in sources directory to create plugin .zip and install it automatically::
 
     > calibre-customize -b .
 
