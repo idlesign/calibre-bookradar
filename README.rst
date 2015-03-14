@@ -2,6 +2,9 @@ calibre-bookradar
 =================
 http://github.com/idlesign/calibre-bookradar
 
+.. image:: https://landscape.io/github/idlesign/calibre-bookradar/master/landscape.svg?style=plastic
+   :target: https://landscape.io/github/idlesign/calibre-bookradar/master
+
 
 What's that
 -----------

@@ -36,7 +36,7 @@ class BookradarMetadataSourcePlugin(Source):
         return found
 
     @classmethod
-    def parse_response(cls, response, title_initial, author_initial, isbn_initial, log):
+    def parse_response(cls, response, isbn_initial, log):
         metadata_items = []
 
         page_soup = BeautifulSoup(response.text)
@@ -109,7 +109,10 @@ class BookradarMetadataSourcePlugin(Source):
             log.exception('Failed to get data from `%s`: %s' % (url, e.message))
             return as_unicode(e)
 
-        metadata = self.parse_response(response, title, authors, isbn, log=log)
+        if abort.is_set():
+            return
+
+        metadata = self.parse_response(response, isbn_initial=isbn, log=log)
 
         for result in metadata:
             self.clean_downloaded_metadata(result)
@@ -120,7 +123,7 @@ if __name__ == '__main__':
     # Tests
     # calibre-customize -b . && calibre-debug -e __init__.py
 
-    from calibre.ebooks.metadata.sources.test import (test_identify_plugin, title_test, authors_test, isbn_test)
+    from calibre.ebooks.metadata.sources.test import (test_identify_plugin, title_test, authors_test)
 
     test_identify_plugin(BookradarMetadataSourcePlugin.name, [
         (
