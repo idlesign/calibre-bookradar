@@ -6,6 +6,9 @@ http://github.com/idlesign/calibre-bookradar
    :target: https://landscape.io/github/idlesign/calibre-bookradar/master
 
 
+.. warning:: **According to https://vk.com/bookradar service bookradar.org was closed, so the plugin won't help you.**
+
+
 What's that
 -----------
 
